@@ -21,7 +21,7 @@ export default function Footer() {
           <Image
             src="/images/logo.png"
             alt="Tea Time Telugu logo"
-            width={120}
+            width={150}
             height={70}
             priority
           />

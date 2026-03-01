@@ -10,11 +10,18 @@ export default function Suggestions() {
 
   return (
     <div className={styles.wrapper}>
-      {tags.map((t) => (
-        <button key={t} onClick={() => router.push(`/search?q=${t}`)}>
-          {t}
-        </button>
-      ))}
+      <p className={styles.title}>Popular searches</p>
+      <div className={styles.tags}>
+        {tags.map((t) => (
+          <button
+            type="button"
+            key={t}
+            onClick={() => router.push(`/search?q=${encodeURIComponent(t)}`)}
+          >
+            {t}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }

@@ -18,12 +18,12 @@ export default function LoadMore({ onLoadMore, isLoading = false }: Props) {
       >
         {isLoading ? (
           <>
-            <span className={styles.text}>లోడ్ అవుతోంది...</span>
+            <span className={styles.text}>Loading...</span>
             <span className={styles.spinner}></span>
           </>
         ) : (
           <>
-            <span className={styles.text}>మరిన్ని లోడ్ చేయండి</span>
+            <span className={styles.text}>Load More</span>
             <span className={styles.icon}>
               <FaArrowRotateRight />
             </span>

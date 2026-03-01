@@ -9,7 +9,7 @@ type Props = {
 };
 
 const formatDate = (date: string) =>
-  new Date(date).toLocaleDateString("te-IN", {
+  new Date(date).toLocaleDateString("en-IN", {
     day: "2-digit",
     month: "long",
     year: "numeric",

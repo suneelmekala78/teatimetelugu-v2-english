@@ -7,7 +7,7 @@ type Props = {
 export default function NoResults({ text }: Props) {
   return (
     <p className={styles.text}>
-      No results found for "<b>{text}</b>"
+      No results found for "<b>{text}</b>". Try a different keyword.
     </p>
   );
 }

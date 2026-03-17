@@ -14,8 +14,6 @@ export default function NetworkProvider({
     const goOffline = () => setOffline(true);
     const goOnline = () => setOffline(false);
 
-    setOffline(!navigator.onLine);
-
     window.addEventListener("offline", goOffline);
     window.addEventListener("online", goOnline);
 

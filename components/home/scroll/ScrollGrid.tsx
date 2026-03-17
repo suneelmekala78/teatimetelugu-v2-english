@@ -11,16 +11,20 @@ interface NewsItem {
   category: { en: string };
 }
 
-export default async function ScrollGrid() {
+export default async function ScrollGrid({ news: prefetched }: { news?: NewsItem[] } = {}) {
   let topics: NewsItem[] = [];
 
-  try {
-    const res = await getHotTopics();
-    if (res?.status === "success") {
-      topics = res.news;
+  if (prefetched?.length) {
+    topics = prefetched;
+  } else {
+    try {
+      const res = await getHotTopics();
+      if (res?.status === "success") {
+        topics = res.news;
+      }
+    } catch {
+      topics = [];
     }
-  } catch {
-    topics = [];
   }
 
   if (!topics.length) return null;

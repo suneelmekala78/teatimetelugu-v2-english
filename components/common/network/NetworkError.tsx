@@ -9,14 +9,14 @@ export default function NetworkError() {
       <div className={styles.card}>
         <FaWifi className={styles.icon} />
 
-        <h2>ఇంటర్నెట్ కనెక్షన్ లేదు</h2>
+        <h2>No Internet Connection</h2>
 
         <p>
-          దయచేసి మీ నెట్‌వర్క్ చెక్ చేసి మళ్లీ ప్రయత్నించండి.
+          Please check your network and try again.
         </p>
 
         <button onClick={() => location.reload()} className={styles.btn}>
-          <FaRedo /> మళ్లీ ప్రయత్నించండి
+          <FaRedo /> Try Again
         </button>
       </div>
     </div>

@@ -29,6 +29,7 @@ export default function VideoGalleryClient({
             src={current.videoUrl}
             title={current.title?.en}
             allowFullScreen
+            loading="lazy"
           />
         </div>
 

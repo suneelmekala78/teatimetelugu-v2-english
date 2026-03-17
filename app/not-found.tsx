@@ -8,19 +8,19 @@ export default function NotFound() {
       <div className={styles.card}>
         <h1 className={styles.code}>404</h1>
 
-        <h2 className={styles.title}>పేజీ కనబడలేదు</h2>
+        <h2 className={styles.title}>Page Not Found</h2>
 
         <p className={styles.desc}>
-          మీరు వెతుకుతున్న పేజీ అందుబాటులో లేదు లేదా తొలగించబడింది.
+          The page you are looking for is not available or has been removed.
         </p>
 
         <div className={styles.actions}>
           <Link href="/" className={styles.primaryBtn}>
-            <FaHome /> హోమ్
+            <FaHome /> Home
           </Link>
 
           <Link href="/search" className={styles.secondaryBtn}>
-            <FaSearch /> వెతకండి
+            <FaSearch /> Search
           </Link>
         </div>
       </div>

@@ -23,7 +23,7 @@ export default function Footer() {
             alt="Tea Time Telugu logo"
             width={150}
             height={70}
-            priority
+            priority={false}
           />
         </Link>
 

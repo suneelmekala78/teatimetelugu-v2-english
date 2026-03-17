@@ -1,11 +1,7 @@
-"use server";
-
-import { cookies } from "next/headers";
-
 const BASE = process.env.NEXT_PUBLIC_API_URL!;
-const FETCH_TIMEOUT = 8000;
+const FETCH_TIMEOUT = 8000; // 8s — must finish before Netlify's 10s function timeout
 
-export async function serverFetch(
+export async function publicFetch(
   path: string,
   options?: { params?: Record<string, any>; revalidate?: number }
 ): Promise<any> {
@@ -15,19 +11,11 @@ export async function serverFetch(
     ? `?${new URLSearchParams(params as any).toString()}`
     : "";
 
-  const cookieStore = await cookies();
-
-  const cookieHeader = cookieStore
-    .getAll()
-    .map((c) => `${c.name}=${c.value}`)
-    .join("; ");
-
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT);
 
   try {
     const res = await fetch(`${BASE}${path}${query}`, {
-      headers: { Cookie: cookieHeader },
       next: { revalidate },
       signal: controller.signal,
     });
